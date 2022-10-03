@@ -290,3 +290,44 @@ a{
     line-height: 16px;
     background-color: #fff;
 }
+/*============================================================================================================= MAIN ============================================================================================================= */
+
+.main{
+    padding-top: 140px;
+}
+
+/*============================================================================================================= HERO ============================================================================================================= */
+
+.hero{
+    min-height: 450px;
+    padding: 40px 0;
+}
+.hero > .container{
+    display: flex;
+    justify-content: space-between;
+}
+.hero__wrap{
+    width: 635px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero__title{
+    font-weight: 700;
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+.hero__title .italic{
+    font-style: italic;
+    font-weight: 400;
+}
+.hero__text{
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 45px;
+}
+.hero__img{
+    height: 100%;
+    object-fit: contain;
+}
