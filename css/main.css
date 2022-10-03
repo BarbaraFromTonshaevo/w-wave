@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'Muller';
+    src: local('Muller Regular'), local('MullerRegular'),
+        url('../fonts/MullerRegular.woff2') format('woff2'),
+        url('../fonts/MullerRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Muller';
+    src: local('Muller Medium'), local('MullerMedium'),
+        url('../fonts/MullerMedium.woff2') format('woff2'),
+        url('../fonts/MullerMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Muller';
+    src: local('Muller Bold'), local('MullerBold'),
+        url('../fonts/MullerBold.woff2') format('woff2'),
+        url('../fonts/MullerBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+:root{
+ --black: #121723;
+ --light-black: #292E39;
+ --text_gray: #A1A6B4;
+ --shade_gray: #D2D5DD;
+ --light_color: #E6E8EC;
+ --light_color_40: rgba(230, 232, 236, 0.4);
+ --primary: #6D31EE;
+ --primary_shade: #4F28A5;
+ --primary_light: #AA9DFA;
+ --red: #FF6F6F;
+ --promo_color: #F0D288;
+ --promo_color_shade: #BB973E;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Muller', serif;
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+button{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+a{
+    padding: 0;margin: 0;
+    text-decoration: none;
+}
+
+/*============================================================================================================= COMMON ============================================================================================================= */
+
+.container{
+    width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+.btn{
+    height: 70px;
+    width: fit-content;
+    padding: 0 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 40px;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    transition: color .3s, background-color .3s, border-color .3s;
+}
+.btn:hover{
+    border-color: var(--primary_light);
+    background-color: var(--primary_light);
+}
+.btn:focus{
+    color: white;
+    border-color: var(--primary_shade);
+    background-color: var(--primary_light);
+}
+.btn:active{
+    color: white;
+    border-color: var(--primary_shade);
+    background-color: var(--primary_shade);
+}
+.btn.light{
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: transparent; 
+}
+.btn.light:hover{
+    color: white;
+    border-color: var(--primary);
+    background-color: var(--primary_light);
+}
+/*============================================================================================================= HEADER =============================================================================================================*/
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+.header-top{
+    height: 80px;
+}
+.header-top > .container{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+}
+.header__menu{
+    margin: 0 auto;
+}
+.header__menu-list{
+    display: flex;
+    gap: 50px;
+}
+.header__menu-link{
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--black);
+    padding: 4px 10px;
+    background-color: transparent;
+    transition: color .3s, background-color .3s;
+}
+.header__menu-link:hover{
+    color: var(--primary);
+}
+.header__menu-link:focus{
+    color: white;
+    background-color: var(--primary_light);
+    outline: none;
+}
+.header__menu-link:active{
+    color: var(--primary_shade);
+}
+
+
+.header__search{
+    margin-right: 24px;
+    height: 24px;
+    width: fit-content;
+}
+.header__search-btn{
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+.header__search-btn:hover svg path{
+    stroke: var(--primary_shade)
+}
+.header__search-btn:focus{
+    outline: none;
+}
+.header__search-btn:focus svg path{
+    stroke: var(--primary_light)
+}       
+.header__search-btn:active svg path{
+    stroke: var(--primary_shade)
+}
+.header__enter-btn{
+    cursor: pointer;
+    height: 40px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    font: 500 16px/16px 'Muller';
+    color: var(--black);
+    transition: color .3s, background-color .3s, border-color .3s;
+}
+.header__enter-btn:hover{
+    background-color: var(--black);
+    color: white;
+}
+.header__enter-btn:focus{
+    background-color: var(--primary_light);
+}
+.header__enter-btn:active{
+    background-color: var(--primary_shade);
+    border-color: var(--primary_shade);
+    color: white;
+
+}
+
+.header-bottom{
+    height: 60px;
+    border-top: 1px solid var(--light_color);
+    border-bottom: 1px solid var(--light_color);
+}
+.header-bottom > .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.header__categories-list{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.header__categories-link{
+    font-size: 16px;
+    color: var(--black);
+    padding: 3px 5px;
+}
+.header__categories-link:hover{
+    color: var(--primary);
+}
+.header__categories-link:focus{
+    color: white;
+    background-color: var(--primary_light);
+    outline: none;
+}
+.header__categories-link:active{
+    color: var(--primary_shade);
+}
+.header__ether{
+    margin-left: auto;
+    margin-right: 50px;
+    display: flex;
+    border-left: 1px solid var(--light_color);
+}
+.header__ether-current,
+.header__ether-last{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 10px;
+    border-right: 1px solid var(--light_color);
+}
+.header__ether-text{
+    width: 121px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+.header__ether-subtitle{
+    font-family: 'Muller';
+    font-size: 12px;
+    color: var(--text_gray);
+}
+.header__ether-title{
+    font-family: 'Muller';
+    font-size: 16px;
+    color: var(--black);
+}
+
+.header__age{
+    height: 100%;
+    width: 46px;
+    background-color: var(--light_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__age-num{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text_gray);
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #fff;
+}
