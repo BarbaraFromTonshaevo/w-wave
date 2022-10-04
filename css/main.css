@@ -96,12 +96,15 @@ h2{
     border-color: var(--primary_light);
     background-color: var(--primary_light);
 }
-.btn:focus{
+.btn:focus,
+.btn.light:focus{
+    outline: none;
     color: white;
     border-color: var(--primary_shade);
     background-color: var(--primary_light);
 }
-.btn:active{
+.btn:active,
+.btn.light:active{
     color: white;
     border-color: var(--primary_shade);
     background-color: var(--primary_shade);
@@ -343,7 +346,7 @@ h2{
     padding: 94px 0;
     background-color: var(--light_color);
 }
-.podcast__title{
+.podcast__heading{
     margin-bottom: 30px;
 }
 .podcast__list{
@@ -446,3 +449,155 @@ h2{
 .podcast__btn{
     margin: 0 auto;
 }
+
+/*============================================================================================================= BROADCAST =============================================================================================================*/
+
+.broadcast{
+    padding: 94px 0;
+}
+.broadcast > .container{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-gap: 30px;
+}
+.broadcast__wrap{
+    display: flex;
+    flex-direction: column;
+}
+.broadcast__heading{
+    margin-bottom: 12px;
+}
+.broadcast__author-wrap{
+    margin-bottom: auto;
+}
+.broadcast__author-title{
+    font-size: 16px;
+    color: var(--text_gray);
+    margin-bottom: 8px;
+}
+.broadcast__archive-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 45px;
+    border: 2px solid var(--black);
+    border-radius: 20px;
+    font: 500 16px 'Muller';
+    cursor: pointer;
+    transition: color .3s, background-color .3s, border-color .3s;
+    margin-bottom: 23px;
+}
+.broadcast__archive-btn svg{
+    margin-right: 4px;
+}
+.broadcast__archive-btn svg path{
+    transition: stroke .3s;
+}
+.broadcast__archive-btn:hover{
+    background-color: var(--black);
+    color: white;
+}
+.broadcast__archive-btn:hover svg path{
+    stroke: white;
+}
+.broadcast__archive-btn:focus{
+    outline: none;
+    background-color: var(--primary_light);
+}
+.broadcast__archive-btn:active{
+    border: var(--primary_shade);
+    background-color: var(--primary_shade);
+    color: white;
+}
+.broadcast__archive-btn:active svg path{
+    stroke: white;
+}
+.broadcast__archive-text{
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text_gray);
+}
+.broadcast__list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+.broadcast__link{
+    display: block;
+    color: var(--black);
+    border: 1px solid var(--light_color);
+}
+.broadcast__img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: opacity .3s;
+}
+.broadcast__text-wrap{
+    padding: 20px 16px;
+    /* display: flex;
+    flex-direction: column; */
+}
+.broadcast__name{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.broadcast__date{
+    color: var(--text_gray);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.broadcast__details{
+    width: 120px;
+    position: relative;
+    font-style: italic;             
+    font-size: 16px;
+    transition: color .3s;
+    padding: 1px;       
+}
+.broadcast__details::after{
+    position:absolute;
+    top: 1px;
+    right: 0;;
+    content: '';
+    display: block;
+    width: 28px;
+    height: 12px;
+    position: absolute;
+    mask-image: url(../img/icons/arrow.svg);
+    -webkit-mask-image: url(../img/icons/arrow.svg);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    background-color: var(--black);
+    transition: background-color .3s;
+}
+.broadcast__link:hover .broadcast__img{
+    opacity: 0.7;
+}
+.broadcast__link:hover .broadcast__details{
+    color: var(--primary);
+}
+.broadcast__link:hover .broadcast__details::after{
+    background-color: var(--primary);
+}
+.broadcast__link:focus{
+    outline: 1px solid var(--primary);
+}
+.broadcast__link:focus .broadcast__details{
+    background-color: var(--primary_light);
+    color: white;
+}
+.broadcast__link:focus .broadcast__details::after{
+    background-color: white;
+}
+
+.broadcast__link:active .broadcast__details{
+    color: var(--primary_shade);
+}
+.broadcast__link:active .broadcast__details::after{
+    background-color: var(--primary_shade);
+}
+
+
