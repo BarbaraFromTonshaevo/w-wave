@@ -32,7 +32,7 @@
 }
 :root{
  --black: #121723;
- --light-black: #292E39;
+ --light_black: #292E39;
  --text_gray: #A1A6B4;
  --shade_gray: #D2D5DD;
  --light_color: #E6E8EC;
@@ -49,6 +49,8 @@
 }
 html, body{
     font-family: 'Muller', serif;
+    padding: 0;
+    margin: 0;
 }
 ul,li{
     list-style: none;
@@ -989,3 +991,94 @@ h2{
     font-size: 12px;
     color: var(--text_gray)
 }
+
+/*============================================================================================================= RADIO =============================================================================================================*/
+
+.radio{
+    background: var(--light_black);
+    padding: 94px 0;
+}
+
+.radio > .container{
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    grid-gap: 30px;
+}
+.radio__heading{
+    color: var(--promo_color);
+    margin-bottom: 19px;
+}
+.radio__wave-img{
+    height: 10px;
+    width: 100%;
+    background-image: url(../img/icons/wave.svg);
+    background-size: cover;
+    margin-bottom: 19px;
+}
+.radio__text{
+    font-size: 16px;
+    line-height: 180%;
+    color: white;
+    margin-bottom: 12px;
+}
+.radio__text .yellow{
+    color: var(--promo_color);
+}
+.radio__price{
+    margin-top: 18px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: white;
+}
+.radio__buy-btn{
+    border: 2px solid var(--promo_color);
+    padding: 0 13px;
+    color: var(--promo_color);
+    transition: background-color .3s, color .3s, border-color .3s;
+}
+.radio__buy-btn-icon{
+    width: 19px;
+    height: 19px;
+    background-color: var(--promo_color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    transition: background-color .3s;
+}
+.radio__buy-btn-icon svg path{
+    transition:  fill .3s;
+}
+.radio__buy-btn:hover{
+    color: var(--black);
+    background-color: var(--promo_color);
+}
+.radio__buy-btn:hover .radio__buy-btn-icon{
+    background-color: var(--black);
+}
+.radio__buy-btn:hover .radio__buy-btn-icon svg path{
+    fill: var(--promo_color);
+}
+.radio__buy-btn:focus{
+    color: var(--black);
+    background-color: var(--promo_color_shade);
+}
+.radio__buy-btn:focus .radio__buy-btn-icon{
+    background-color: var(--promo_color);
+}
+.radio__buy-btn:active{
+    color: var(--black);
+    border-color: var(--promo_color_shade);
+    background-color: var(--promo_color_shade);
+}
+.radio__buy-btn:active .radio__buy-btn-icon{
+    background-color: var(--black);
+}
+.radio__buy-btn:active .radio__buy-btn-icon svg path{
+    fill: var(--promo_color_shade);
+}
+
+
+
+
