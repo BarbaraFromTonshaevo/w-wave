@@ -14,11 +14,15 @@ if(accordionItems){
 					setTimeout(function () {
 						item.nextElementSibling.style.height = '0px';
 					}, 0);
+					setTimeout(function () {
+						itemContent.style.display = 'none';
+					}, 500);
 				});
 
 				// Открываем выбранный пункт
 				item.classList.add("active");
 				let itemContent = item.nextElementSibling;
+				itemContent.style.display = "block";
 				itemContent.style.height = 'auto';
 				let height = itemContent.clientHeight + 'px';
 				itemContent.style.height = '0px';
@@ -35,6 +39,9 @@ if(accordionItems){
 				setTimeout(function () {
 					item.nextElementSibling.style.height = '0px';
 				}, 0);
+				setTimeout(function () {
+					itemContent.style.display = 'none';
+				}, 500);
 			};
 		});
 	});
