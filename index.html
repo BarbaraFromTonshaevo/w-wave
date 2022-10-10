@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W-wave</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -1189,44 +1190,70 @@
                         <img src="./img/icons/dawn.svg" alt="">
                     </div>
                 </div>
-                <ul class="about__team-list">
-                    <li class="about__team-item">
-                        <div class="about__team-img-wrap">
-                            <img src="./img/about-1.jpg" alt="" class="about__team-img">
+            </div>
+            <div class="about__guest-wrap">
+                <button class="about__guest-swiper-btn btn-prev"></button>
+                <div class="about__guest-swiper swiper">
+                    <div class="about__guest-swiper-wrapper swiper-wrapper">
+                        <div class="about__guest-swiper-slide swiper-slide">
+                            <div class="about__guest-img-wrap">
+                                <img src="./img/about-1.jpg" alt="" class="about__guest-img">
+                            </div>
+                            <div class="about__guest-text-wrap">
+                                <div class="about__guest-name">Дмитрий Гутенберг</div>
+                                <div class="about__guest-position">Эксперт (ну, почти) по всем вопросам (почти).</div>
+                            </div>
                         </div>
-                        <div class="about__team-text-wrap">
-                            <div class="about__team-name">Дмитрий Гутенберг</div>
-                            <div class="about__team-position">Эксперт (ну, почти) по всем вопросам (почти).</div>
+                        <div class="about__guest-swiper-slide swiper-slide">
+                            <div class="about__guest-img-wrap">
+                                <img src="./img/about-2.jpg" alt="" class="about__guest-img">
+                            </div>
+                            <div class="about__guest-text-wrap">
+                                <div class="about__guest-name">Анна Васильева</div>
+                                <div class="about__guest-position">Как я здесь оказалась? А главное — зачем?</div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="about__team-item">
-                        <div class="about__team-img-wrap">
-                            <img src="./img/about-2.jpg" alt="" class="about__team-img">
+                        <div class="about__guest-swiper-slide swiper-slide">
+                            <div class="about__guest-img-wrap">
+                                <img src="./img/about-3.jpg" alt="" class="about__guest-img">
+                            </div>
+                            <div class="about__guest-text-wrap">
+                                <div class="about__guest-name">Пётр Дмитриевский</div>
+                                <div class="about__guest-position">Господа! Внимание!! Благодарю за внимание!!!</div>
+                            </div>
                         </div>
-                        <div class="about__team-text-wrap">
-                            <div class="about__team-name">Анна Васильева</div>
-                            <div class="about__team-position">Как я здесь оказалась? А главное — зачем?</div>
+                        <div class="about__guest-swiper-slide swiper-slide">
+                            <div class="about__guest-img-wrap">
+                                <img src="./img/about-4.jpg" alt="" class="about__guest-img">
+                            </div>
+                            <div class="about__guest-text-wrap">
+                                <div class="about__guest-name">Татьяна Флеганова</div>
+                                <div class="about__guest-position">Одна я в пальто стою красивая, а вокруг...</div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="about__team-item">
-                        <div class="about__team-img-wrap">
-                            <img src="./img/about-3.jpg" alt="" class="about__team-img">
+                        <div class="about__guest-swiper-slide swiper-slide">
+                            <div class="about__guest-img-wrap">
+                                <img src="./img/about-5.jpg" alt="" class="about__guest-img">
+                            </div>
+                            <div class="about__guest-text-wrap">
+                                <div class="about__guest-name">Фёдор Прокопьев</div>
+                                <div class="about__guest-position">Привет! Я фотограф, музыкант, ведущий</div>
+                            </div>
                         </div>
-                        <div class="about__team-text-wrap">
-                            <div class="about__team-name">Пётр Дмитриевский</div>
-                            <div class="about__team-position">Господа! Внимание!! Благодарю за внимание!!!</div>
+                        <div class="about__guest-swiper-slide swiper-slide">
+                            <div class="about__guest-img-wrap">
+                                <img src="./img/about-6.jpg" alt="" class="about__guest-img">
+                            </div>
+                            <div class="about__guest-text-wrap">
+                                <div class="about__guest-name">Светлана Кортнева</div>
+                                <div class="about__guest-position">Художник-оформитель. Оформляю</div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="about__team-item">
-                        <div class="about__team-img-wrap">
-                            <img src="./img/about-4.jpg" alt="" class="about__team-img">
-                        </div>
-                        <div class="about__team-text-wrap">
-                            <div class="about__team-name">Татьяна Флеганова</div>
-                            <div class="about__team-position">Одна я в пальто стою красивая, а вокруг...</div>
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <button class="about__guest-swiper-btn btn-next"></button>
+            </div>
+            <div class="container">
                 <form action="" class="about__form">
                     <textarea name="" id="" cols="30" rows="10" class="about__form-textarea" placeholder="Что скажете?"></textarea>
                     <input type="text" class="about__form-input" name="name" placeholder="Имя">
@@ -1235,6 +1262,7 @@
                     <input type="checkbox" class="about__form-agreement-input" name="agreement">
                     <label for="agreement" class="about__form-agreement-label">Согласен на обработку персональных данных</label>
                 </form>
+            </div>
             </div>
         </section>
     </main>
@@ -1312,6 +1340,7 @@
     </footer>
     <script src="./js/select.js"></script>
     <script src="./js/accordion.js"></script>
-    
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
