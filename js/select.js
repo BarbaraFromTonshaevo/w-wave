@@ -12,6 +12,7 @@ if(select){
     // Создаем новый селект
     let selectStyled = document.createElement('div');
     selectStyled.setAttribute("class", "select-styled");
+    selectStyled.setAttribute("tabindex", "0");
     selectWrap.appendChild(selectStyled);
 
     // Создаем новый список
@@ -27,10 +28,19 @@ if(select){
       let text = $this.options[i].text;
       let option = document.createElement('li');
       option.innerText = text;
+      option.setAttribute("tabindex", "0");
       optionsList.appendChild(option);
 
       // Клик на пункт
+      option.addEventListener("keydown",(e)=>{
+        if(e.keyCode === 13){
+          clickOnOptions(e);
+        }
+      });
       option.addEventListener("click", function(e){
+        clickOnOptions(e);
+      });
+      function clickOnOptions(e){
         option.closest("ul").querySelectorAll("li").forEach(function(item){
           item.classList.remove("choice");
         });
@@ -40,6 +50,9 @@ if(select){
 
         selectStyled.classList.remove("active");
         options.style.height = '0px';
+        setTimeout(function () {//
+					options.style.display = 'none';//
+				}, 500);//
 
         // Имитируем клик на реальный селект
         $this.querySelectorAll("option").forEach(function(item){
@@ -48,8 +61,7 @@ if(select){
         $this.options[i].setAttribute("selected", "selected");
         let eventChange = new Event('change');
         $this.dispatchEvent(eventChange);
-
-      });
+      }
     };
 
     // Выбранный пункт по умолчанию
@@ -58,15 +70,24 @@ if(select){
     selectStyled.innerText = startText;
     let index = startChoice.index;
     optionsList.querySelector("li:nth-child(" +(index + 1)+ ")").classList.add("choice");
-
+    // Enter на селект
+    selectStyled.addEventListener("keydown",(e)=>{
+      if(e.keyCode === 13){
+        clickOnSelect(e);
+      }
+    });
 
     // Клик на селект
     selectStyled.addEventListener("click", function(e){
-      closeSelects(e);
+      clickOnSelect(e);
+    });
 
+    function clickOnSelect(e){
+      closeSelects(e);
+  
       if(!selectStyled.classList.contains("active")){
         selectStyled.classList.add("active");
-
+        options.style.display = "block";//
         options.style.height = 'auto';
         let optionsHeight = options.clientHeight + 'px';
         options.style.height = '0px';
@@ -77,7 +98,7 @@ if(select){
         selectStyled.classList.remove("active");
         options.style.height = '0px';
       };
-    });
+    }
   });
 
   // Клик вне селекта
@@ -92,6 +113,9 @@ if(select){
       document.querySelectorAll(".select-styled.active").forEach(function(item){
         item.classList.remove("active");
         item.nextElementSibling.style.height = '0px';
+        setTimeout(function () {//
+					item.nextElementSibling.style.display = 'none';//
+				}, 500);//
       });
     };
   };

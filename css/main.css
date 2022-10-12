@@ -201,6 +201,7 @@ h2{
     border: 1px solid var(--shade_gray);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    display: none;
 }
 .select-options ul{
     padding-top: 10px;
@@ -222,6 +223,7 @@ h2{
     color: var(--black);     
 }
 .select-options ul > li:focus{
+    outline: none   ;
     background-color: var(--primary_light);  
     color: var(--black);     
 }
@@ -283,6 +285,7 @@ h2{
 }
 .accordion__content.active{
     height: auto;
+    display: block;
 }
 .accordion__inner{
     padding-top: 20px;
@@ -337,6 +340,7 @@ h2{
 
 
 .header__search{
+    cursor: pointer;
     margin-right: 24px;
     height: 24px;
     width: fit-content;
@@ -423,13 +427,39 @@ h2{
     display: flex;
     border-left: 1px solid var(--light_color);
 }
+
 .header__ether-current,
 .header__ether-last{
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
     padding-left: 10px;
     border-right: 1px solid var(--light_color);
+}
+.header__ether-current:hover use,
+.header__ether-last:hover use{
+    fill: var(--primary);
+}
+.header__ether-current:focus,
+.header__ether-last:focus{
+    outline: none;
+}
+.header__ether-current:focus use,
+.header__ether-last:focus use{
+    fill: var(--primary_light);
+}
+.header__ether-current:active use,
+.header__ether-last:active use{
+    fill: var(--primary_shade);
+}
+.header__ether-img{
+    height: 20px;
+    width: 20px;
+}
+.header__ether-img use{
+    fill: var(--text_gray);
+    transition: fill .3s;
 }
 .header__ether-text{
     width: 121px;
@@ -1032,6 +1062,16 @@ h2{
 .playlist__genre-label{
     cursor: pointer;
 }
+.playlist__genre-label:hover div::before{
+    border-color: var(--primary);
+}
+.playlist__genre-label:focus{
+    outline: none;
+}
+.playlist__genre-label:focus div::before{
+    border-color: var(--primary);
+    background-color: var(--shade_gray);
+}
 .playlist__genre-label div{
     display: flex;
     align-items: center;
@@ -1126,7 +1166,7 @@ h2{
     opacity: 0.8;
 }
 .playlist__card-link:hover .playlist__card-img-wrap::after,
-.playlist__card-link:focus.playlist__card-img-wrap::after,
+.playlist__card-link:focus .playlist__card-img-wrap::after,
 .playlist__card-link:active .playlist__card-img-wrap::after{
     opacity: 1;
 }
@@ -1412,6 +1452,7 @@ h2{
     color: var(--text_gray);
     grid-column: span 2;
     font-family: 'Muller';
+    transition: border-color .3s, background-color .3s;
 }
 .about__form-textarea::placeholder{
     font-weight: 400;
@@ -1430,11 +1471,29 @@ h2{
     font-size: 20px;
     line-height: 24px;
     font-family: 'Muller';
+    transition: border-color .3s, background-color .3s;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text_gray);    
 }
 .about__form-input::placeholder{
     font-size: 20px;
     color: var(--text_gray);
     font-family: 'Muller';
+}
+.about__form-textarea:hover,
+.about__form-input:hover{
+    background-color: var(--light_black);
+}
+.about__form-textarea:focus,
+.about__form-input:focus{
+    outline: none;
+    border-color: var(--primary_light);
+    background-color: var(--light_black);
+}
+.about__form-textarea:active,
+.about__form-input:active{
+    color: white;
 }
 .about__form-submit{
     grid-column: span 2;
@@ -1451,8 +1510,10 @@ h2{
     display: flex;
     align-items: center;
     height: 14px;
+    cursor: pointer;
+    transition: color .3s;
 }
-.about__form-agreement-label::before{
+.about__form-agreement-label div::before{
     position: absolute;
     left: 0;
     top: 0;
@@ -1462,7 +1523,7 @@ h2{
     height: 14px;
     border: 1px solid white;
 }
-.about__form-agreement-label::after{
+.about__form-agreement-label div::after{
     position: absolute;
     top: 2px;
     left: 5px;
@@ -1473,6 +1534,21 @@ h2{
     border-bottom: 2px solid var(--primary_light);
     border-right: 2px solid var(--primary_light);
     transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity .3s;
+}
+.about__form-agreement-input:checked + div::after{
+    opacity: 1;
+}
+.about__form-agreement-label:hover{
+    color: var(--primary);
+}
+.about__form-agreement-label:focus{
+    outline: none;
+    color: var(--primary_light);
+}
+.about__form-agreement-label:hover{
+    color: var(--primary_shade);
 }
 /*============================================================================================================= ABOUT =============================================================================================================*/
 
@@ -1487,6 +1563,8 @@ h2{
     margin-bottom: 94px;
 }
 .footer__logo{
+    cursor: pointer;
+    display: block;
     width: 160px;
     height: 20px;
     margin-bottom: 20px;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W-wave</title>
+    <link rel="shortcut icon" href="img/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -12,6 +13,10 @@
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
 		<symbol id="icon-play" viewBox="0 0 12 16">
             <path d="M1.69238 15.7965L11.5716 8.79964C12.1428 8.39982 12.1428 7.60018 11.5716 7.20036L1.69238 0.203465C0.994271 -0.296313 0 0.183473 0 1.00311V14.9969C0 15.8165 0.994271 16.2963 1.69238 15.7965Z"/>
+		</symbol>
+
+        <symbol id="icon-play-s" viewBox="0 0 20 20">
+            <path d="M10 0C4.475 0 0 4.475 0 10C0 15.525 4.475 20 10 20C15.525 20 20 15.525 20 10C20 4.475 15.525 0 10 0ZM8 14.5V5.5L14 10L8 14.5Z"/>
 		</symbol>
 
         <symbol id="icon-yt" viewBox="0 0 24 24">
@@ -93,14 +98,18 @@
                 </div>
                 <div class="header__ether">
                     <button class="header__ether-last">
-                        <img src="./img//icons/play-grey.svg" alt="" class="header__ether-img">
+                        <svg alt="" class="header__ether-img">
+                            <use href="#icon-play-s"/>
+                        </svg>
                         <div class="header__ether-text">
                             <div class="header__ether-subtitle">Ранее в эфире</div>
                             <div class="header__ether-title">«Музыка»</div>
                         </div>
                     </button>
                     <button class="header__ether-current">
-                        <img src="./img//icons/play-grey.svg" alt="" class="header__ether-img">
+                        <svg alt="" class="header__ether-img">
+                            <use href="#icon-play-s"/>
+                        </svg>
                         <div class="header__ether-text">
                             <div class="header__ether-subtitle">Сейчас в эфире</div>
                             <div class="header__ether-title">«Как так?»</div>
@@ -924,49 +933,49 @@
                         <div class="playlist__genre-title">Жанр</div>
                         <ul class="playlist__genre-list">
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist" checked="checked">
                                     <div>Постпанк</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Хардкор</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Панк-рок</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Рок</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Прогрессивный рокк</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Электронная музыка</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Классическая музыка</div>
                                 </label>
                             </li>
                             <li class="playlist__genre-item">
-                                <label class="playlist__genre-label">
+                                <label class="playlist__genre-label" tabindex="0">
                                     <input class="playlist__genre-input" type="radio" name="playlist">
                                     <div>Звуки природы и шум города</div>
                                 </label>
@@ -1259,8 +1268,12 @@
                     <input type="text" class="about__form-input" name="name" placeholder="Имя">
                     <input type="text" class="about__form-input" type="email" name="email" placeholder="E-mail">
                     <input type="submit" class="btn color about__form-submit">
-                    <input type="checkbox" class="about__form-agreement-input" name="agreement">
-                    <label for="agreement" class="about__form-agreement-label">Согласен на обработку персональных данных</label>
+                    <label class="about__form-agreement-label" tabindex="0">
+                        <input class="about__form-agreement-input" type="checkbox" name="agreement" checked="checked">
+                        <div>Согласен на обработку персональных данных</div>
+                    </label>
+                    <!-- <input type="checkbox" class="about__form-agreement-input" name="agreement"> -->
+                    <!-- <label for="agreement" class="about__form-agreement-label" tabindex="0">Согласен на обработку персональных данных</label> -->
                 </form>
             </div>
             </div>
@@ -1269,9 +1282,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__left">
-                <div class="footer__logo">
+                <a class="footer__logo">
                     <img src="./img/logo-light.svg" alt="" class="footer__logo-img">
-                </div>
+                </a>
                 <ul class="footer__social-list">
                     <li class="footer__social-item">
                         <a href="" class="footer__social-link">
